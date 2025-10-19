@@ -1,31 +1,79 @@
-import { Github, Heart, TrendingDown, Smile } from "lucide-react";
+import { Github, Heart, TrendingDown, Smile, Smartphone, Database, Link2, Gamepad2, BookOpen, BarChart3 } from "lucide-react";
 import { Button } from "./ui/button";
 
 export const Projects = () => {
   const projects = [
     {
-      icon: Heart,
-      title: "Heart Disease Prediction Model",
+      icon: Smartphone,
+      title: "iOS Todo App",
       description:
-        "Provided a comparative study of Heart Disease Prediction Model to determine the best one and further go on to use Feature Importance to reduce parameters.",
-      github: "https://github.com/justinjsd/HeartDiseasePrediction",
-      tags: ["Machine Learning", "Python", "Healthcare"],
+        "A completely Vibe Coded beautiful, modern todo application with iOS design patterns and smooth animations.",
+      github: "https://github.com/justinjsd/ios-todo-app",
+      tags: ["CSS", "UI/UX", "iOS Design"],
     },
     {
-      icon: TrendingDown,
-      title: "Stock Price Prediction Models",
+      icon: Database,
+      title: "Stock Market Data Pipeline",
       description:
-        "Comparative Study on the LSTM, BI-LSTM and ARIMA models for stock price prediction based on their RMSE value.",
-      github: "https://github.com/justinjsd/StockPredictionModelComparison",
-      tags: ["Deep Learning", "Finance", "Time Series"],
+        "Building a comprehensive data pipeline using Apache Airflow for stock market data processing and analysis.",
+      github: "https://github.com/justinjsd/stock-market-data-pipeline",
+      tags: ["Python", "Airflow", "Apache Spark", "PostgreSQL", "MinIO"],
+    },
+    {
+      icon: Link2,
+      title: "Blockchain Implementation",
+      description:
+        "My own take on the implementation of a simple blockchain from scratch. Work in Progress.",
+      github: "https://github.com/justinjsd/blockchain",
+      tags: ["Python", "Blockchain", "Cryptography"],
+    },
+    {
+      icon: Gamepad2,
+      title: "PyGame Projects",
+      description:
+        "A set of fun short Python pygame projects that I've worked on and continue to add to.",
+      github: "https://github.com/justinjsd/pygame",
+      tags: ["Python", "PyGame", "Game Dev"],
+    },
+    {
+      icon: BookOpen,
+      title: "Python Programming MOOC",
+      description:
+        "Python MOOC from University of Helsinki completed as of 1st Feb 2025. Advanced Python topics and exercises.",
+      github: "https://github.com/justinjsd/python-exercises",
+      tags: ["Python", "Learning", "Exercises"],
+    },
+    {
+      icon: BarChart3,
+      title: "Analytics Engineering with DBT",
+      description:
+        "A repository focusing on analytics engineering, particularly using dbt on the Northwind Sample dataset.",
+      github: "https://github.com/justinjsd/analytics-engineering",
+      tags: ["BigQuery", "SQL", "DBT"],
     },
     {
       icon: Smile,
       title: "Real Time Human Sentiment Analyzer",
       description:
-        "Built an AI-based project that could analyze human emotions and map them onto emoticons using Python with the Keras API.",
+        "AI-based project that analyzes human emotions and maps them onto emoticons using sentiment analysis.",
       github: "https://github.com/justinjsd/Sentiment-Analysis-to-Select-Revelant-Emoticons",
-      tags: ["AI", "Computer Vision", "Keras"],
+      tags: ["AI", "Python", "Sentiment Analysis"],
+    },
+    {
+      icon: Heart,
+      title: "Heart Disease Prediction Model",
+      description:
+        "Research on predicting heart disease using various machine learning algorithms with feature importance analysis.",
+      github: "https://github.com/justinjsd/HeartDiseasePrediction",
+      tags: ["Machine Learning", "Healthcare", "Jupyter"],
+    },
+    {
+      icon: TrendingDown,
+      title: "Stock Price Prediction Comparison",
+      description:
+        "Compares three models (LSTM, BI-LSTM and ARIMA) for stock price prediction and analyzes RMSE to find the best model.",
+      github: "https://github.com/justinjsd/StockPredictionModelComparison",
+      tags: ["Deep Learning", "Finance", "Time Series"],
     },
   ];
 
@@ -35,7 +83,7 @@ export const Projects = () => {
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl md:text-5xl font-bold gradient-text">Projects</h2>
           <p className="text-xl text-muted-foreground">
-            Innovative solutions built during my time at BITS Pilani
+            A collection of data engineering, ML, and software projects from my GitHub
           </p>
         </div>
 
