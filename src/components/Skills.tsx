@@ -1,36 +1,31 @@
-import { Award, Code, Database } from "lucide-react";
+import { Award, Database } from "lucide-react";
 
 export const Skills = () => {
   const skillCategories = [
     {
       icon: Database,
-      title: "Data Analytics/Science",
+      title: "Data & Analytics Engineering",
       skills: [
         "SQL",
-        "Google Big Query",
-        "Looker",
-        "LookML",
-        "DBT",
         "Python",
-        "Tableau",
-        "Looker Studio",
+        "dbt (Data Build Tool)",
+        "Apache Airflow",
+        "Google Cloud Platform (GCP)",
+        "BigQuery",
+        "Looker & LookML",
+        "Retool",
         "Git",
-        "MS Excel",
       ],
-    },
-    {
-      icon: Code,
-      title: "Programming Languages",
-      skills: ["Python", "Java", "C", "C++"],
     },
   ];
 
   const certifications = [
-    { name: "Python for Everybody", org: "University of Michigan", platform: "Coursera" },
+    { name: "Analytics Engineer Bootcamp", org: "dbt Labs", platform: "dbt Labs" },
+    { name: "Preparing your data with BigQuery", org: "Google", platform: "Google Cloud" },
+    { name: "Certified SAFe Agile Practitioner", org: "Scaled Agile", platform: "SAFe" },
     { name: "Python Data Structures", org: "Coursera", platform: "Coursera" },
     { name: "Git & GitHub", org: "Google", platform: "Coursera" },
-    { name: "Analyze Data with Excel", org: "Codecademy", platform: "Codecademy" },
-    { name: "BI Dashboards with Tableau", org: "Codecademy", platform: "Codecademy" },
+    { name: "Business Intelligence with Tableau", org: "Codecademy", platform: "Codecademy" },
   ];
 
   return (
@@ -43,7 +38,7 @@ export const Skills = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="mb-12">
           {skillCategories.map((category, index) => (
             <div
               key={category.title}
