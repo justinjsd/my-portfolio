@@ -91,7 +91,7 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="glass p-8 rounded-2xl hover:scale-105 hover:border-primary/50 transition-all duration-300 group"
+              className="glass p-8 rounded-2xl hover:scale-105 hover:border-primary/50 transition-all duration-300 group flex flex-col"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="bg-gradient-to-br from-primary/20 to-accent/20 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
@@ -99,7 +99,7 @@ export const Projects = () => {
               </div>
 
               <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
-              <p className="text-muted-foreground leading-relaxed mb-6">{project.description}</p>
+              <p className="text-muted-foreground leading-relaxed mb-6 flex-grow">{project.description}</p>
 
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.tags.map((tag) => (
@@ -114,7 +114,7 @@ export const Projects = () => {
 
               <Button
                 variant="outline"
-                className="w-full border-primary/50 hover:bg-primary/10"
+                className="w-full border-primary/50 hover:bg-primary/10 mt-auto"
                 onClick={() => window.open(project.github, "_blank")}
               >
                 <Github className="w-4 h-4 mr-2" />
