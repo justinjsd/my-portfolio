@@ -2,10 +2,29 @@ import { Mail, Linkedin, Github, Send } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { toast } from "@/hooks/use-toast";
 
 export const Contact = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll(".scroll-reveal");
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,9 +41,12 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-6">
-      <div className="container mx-auto max-w-4xl">
-        <div className="text-center space-y-4 mb-16">
+    <section id="contact" className="py-24 px-6 relative overflow-hidden">
+      {/* Animated background glow */}
+      <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "5s" }} />
+      
+      <div ref={sectionRef} className="container mx-auto max-w-4xl relative z-10">
+        <div className="text-center space-y-4 mb-16 scroll-reveal">
           <h2 className="text-4xl md:text-5xl font-bold gradient-text">Let's Connect</h2>
           <p className="text-xl text-muted-foreground">
             Have a project in mind or just want to chat? Reach out!
@@ -33,7 +55,7 @@ export const Contact = () => {
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div className="space-y-6">
-            <div className="glass p-6 rounded-2xl hover:scale-105 transition-transform">
+            <div className="glass p-6 rounded-2xl hover:scale-105 hover:shadow-[0_0_40px_rgba(14,165,233,0.2)] transition-all scroll-reveal">
               <div className="flex items-center gap-4">
                 <div className="bg-primary/20 w-12 h-12 rounded-xl flex items-center justify-center">
                   <Mail className="w-6 h-6 text-primary" />
@@ -45,7 +67,7 @@ export const Contact = () => {
               </div>
             </div>
 
-            <div className="glass p-6 rounded-2xl hover:scale-105 transition-transform cursor-pointer">
+            <div className="glass p-6 rounded-2xl hover:scale-105 hover:shadow-[0_0_40px_rgba(14,165,233,0.2)] transition-all cursor-pointer scroll-reveal">
               <div className="flex items-center gap-4">
                 <div className="bg-primary/20 w-12 h-12 rounded-xl flex items-center justify-center">
                   <Linkedin className="w-6 h-6 text-primary" />
@@ -57,7 +79,7 @@ export const Contact = () => {
               </div>
             </div>
 
-            <div className="glass p-6 rounded-2xl hover:scale-105 transition-transform cursor-pointer">
+            <div className="glass p-6 rounded-2xl hover:scale-105 hover:shadow-[0_0_40px_rgba(14,165,233,0.2)] transition-all cursor-pointer scroll-reveal">
               <div className="flex items-center gap-4">
                 <div className="bg-primary/20 w-12 h-12 rounded-xl flex items-center justify-center">
                   <Github className="w-6 h-6 text-primary" />
@@ -70,7 +92,7 @@ export const Contact = () => {
             </div>
           </div>
 
-          <div className="glass p-8 rounded-2xl">
+          <div className="glass p-8 rounded-2xl scroll-reveal hover:shadow-[0_0_40px_rgba(14,165,233,0.2)] transition-all">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <Input

@@ -8,32 +8,32 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 222 47% 11%;
+    --background: 220 40% 3%;
     --foreground: 210 40% 98%;
 
-    --card: 217 33% 17%;
+    --card: 220 30% 8%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 47% 11%;
+    --popover: 220 40% 3%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 199 89% 48%;
-    --primary-foreground: 222 47% 11%;
+    --primary-foreground: 220 40% 3%;
 
-    --secondary: 217 33% 17%;
+    --secondary: 220 30% 8%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 220 30% 10%;
+    --muted-foreground: 215 20% 60%;
 
-    --accent: 199 89% 48%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 282 83% 58%;
+    --accent-foreground: 220 40% 3%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 215 28% 17%;
-    --input: 215 28% 17%;
+    --border: 215 28% 12%;
+    --input: 215 28% 12%;
     --ring: 199 89% 48%;
 
     --radius: 0.75rem;
@@ -44,8 +44,12 @@ All colors MUST be HSL.
     --gradient-end: 282 83% 58%;
     
     /* Glass effect */
-    --glass-bg: 217 33% 17% / 0.4;
+    --glass-bg: 220 30% 8% / 0.3;
     --glass-border: 199 89% 48% / 0.2;
+    
+    /* Glow effects */
+    --glow-primary: 199 89% 48% / 0.3;
+    --glow-accent: 282 83% 58% / 0.3;
   }
 }
 
@@ -56,13 +60,25 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(217 33% 17%) 100%);
+    background: radial-gradient(ellipse at top, hsl(220 30% 8%) 0%, hsl(var(--background)) 50%);
     background-attachment: fixed;
   }
 
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
+  }
+  
+  /* Scroll reveal animations */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -104,5 +120,25 @@ All colors MUST be HSL.
       opacity: 1;
       transform: translateY(0);
     }
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 3s infinite linear;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--primary) / 0.1),
+      transparent
+    );
+    background-size: 1000px 100%;
   }
 }
