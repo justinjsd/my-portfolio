@@ -114,7 +114,9 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="glass p-8 rounded-2xl hover:scale-105 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(14,165,233,0.2)] transition-all duration-300 group flex flex-col scroll-reveal"
+              className={`glass p-8 rounded-2xl hover:scale-105 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(14,165,233,0.2)] transition-all duration-300 group flex flex-col scroll-reveal ${
+                index === projects.length - 1 && projects.length % 3 === 1 ? 'lg:col-start-2' : ''
+              }`}
               style={{ transitionDelay: `${index * 50}ms` }}
             >
               <div className="bg-gradient-to-br from-primary/20 to-accent/20 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
