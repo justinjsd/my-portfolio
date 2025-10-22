@@ -69,18 +69,18 @@ export const Experience = () => {
   return (
     <section id="experience" className="py-24 px-6 relative overflow-hidden">
       {/* Animated background glow */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "3s" }} />
-      
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-white/3 rounded-full blur-3xl animate-float" style={{ animationDelay: "3s" }} />
+
       <div ref={sectionRef} className="container mx-auto max-w-6xl relative z-10">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">Experience</h2>
-          <p className="text-xl text-muted-foreground">My professional journey in data analytics</p>
+        <div className="text-center space-y-4 mb-16 scroll-reveal">
+          <h2 className="text-5xl md:text-6xl font-bold text-white tracking-tight">Experience</h2>
+          <p className="text-xl md:text-2xl text-white/70 font-light">My professional journey in data analytics</p>
         </div>
 
         <div className="relative">
           {/* Timeline line with glow */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary/20 shadow-[0_0_20px_rgba(14,165,233,0.3)]" />
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-white/40 via-white/20 to-white/10" />
 
           {experiences.map((exp, index) => (
             <div
@@ -89,21 +89,21 @@ export const Experience = () => {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Timeline dot with glow */}
-              <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background shadow-[0_0_20px_rgba(14,165,233,0.5)]" />
+              <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-white rounded-full -translate-x-1/2 ring-4 ring-black" />
 
-              <div className={`glass p-6 md:p-8 rounded-2xl ml-16 md:ml-0 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(14,165,233,0.2)] transition-all duration-300 group ${
+              <div className={`card-matte border border-white/10 p-6 md:p-8 rounded-xl ml-16 md:ml-0 hover:scale-[1.02] hover:border-white/20 transition-all duration-500 group ${
                 index % 2 === 0 ? "md:mr-[52%]" : "md:ml-[52%]"
               }`}>
-                <div className="flex items-center gap-2 text-primary mb-3">
+                <div className="flex items-center gap-2 text-white mb-3">
                   <Calendar className="w-4 h-4" />
                   <span className="text-sm font-medium">{exp.period}</span>
                 </div>
 
                 <div className="flex items-start gap-3 mb-4">
-                  <Briefcase className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <Briefcase className="w-5 h-5 text-white mt-1 flex-shrink-0" />
                   <div className="text-left">
-                    <h3 className="text-xl font-bold text-foreground">{exp.title}</h3>
-                    <p className="text-muted-foreground">{exp.company}</p>
+                    <h3 className="text-xl font-bold text-white">{exp.title}</h3>
+                    <p className="text-white/70 font-medium">{exp.company}</p>
                   </div>
                 </div>
 
@@ -111,9 +111,9 @@ export const Experience = () => {
                   {exp.achievements.map((achievement, i) => (
                     <li
                       key={i}
-                      className="text-foreground/80 leading-relaxed flex items-start gap-2"
+                      className="text-white/75 leading-relaxed flex items-start gap-2"
                     >
-                      <span className="text-primary mt-1.5 flex-shrink-0">▪</span>
+                      <span className="text-white mt-1.5 flex-shrink-0">▪</span>
                       <span>{achievement}</span>
                     </li>
                   ))}

@@ -100,12 +100,12 @@ export const Projects = () => {
   return (
     <section id="projects" className="py-24 px-6 relative overflow-hidden">
       {/* Animated background glow */}
-      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
-      
+      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+
       <div ref={sectionRef} className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center space-y-4 mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">Projects</h2>
-          <p className="text-xl text-muted-foreground">
+          <h2 className="text-5xl md:text-6xl font-bold text-white tracking-tight">Projects</h2>
+          <p className="text-xl md:text-2xl text-white/70 font-light">
             A collection of data engineering, ML, and software projects from my GitHub
           </p>
         </div>
@@ -114,37 +114,43 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`glass p-8 rounded-2xl hover:scale-105 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(14,165,233,0.2)] transition-all duration-300 group flex flex-col scroll-reveal ${
+              className={`group relative card-matte border border-white/10 p-8 rounded-xl hover:scale-105 hover:border-white/20 transition-all duration-500 flex flex-col scroll-reveal spotlight overflow-hidden ${
                 index === projects.length - 1 && projects.length % 3 === 1 ? 'lg:col-start-2' : ''
               }`}
               style={{ transitionDelay: `${index * 50}ms` }}
             >
-              <div className="bg-gradient-to-br from-primary/20 to-accent/20 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <project.icon className="w-8 h-8 text-primary" />
+              {/* Animated background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="bg-white/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+                  <project.icon className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
+                </div>
+
+                <h3 className="text-xl font-bold mb-3 text-white">{project.title}</h3>
+                <p className="text-white/70 leading-relaxed mb-6 flex-grow group-hover:text-white/90 transition-colors">{project.description}</p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 text-xs font-medium bg-white/10 text-white rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110"
+                      style={{ animationDelay: `${tagIndex * 50}ms` }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <Button
+                  variant="outline"
+                  className="w-full border-white/20 hover:bg-white hover:text-black text-white mt-auto transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105"
+                  onClick={() => window.open(project.github, "_blank")}
+                >
+                  <Github className="w-4 h-4 mr-2" />
+                  View on GitHub
+                </Button>
               </div>
-
-              <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
-              <p className="text-muted-foreground leading-relaxed mb-6 flex-grow">{project.description}</p>
-
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <Button
-                variant="outline"
-                className="w-full border-primary/50 hover:bg-primary/10 mt-auto"
-                onClick={() => window.open(project.github, "_blank")}
-              >
-                <Github className="w-4 h-4 mr-2" />
-                View on GitHub
-              </Button>
             </div>
           ))}
         </div>

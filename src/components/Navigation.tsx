@@ -31,14 +31,14 @@ export const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass py-4" : "py-6"
+        isScrolled ? "bg-black/80 backdrop-blur-xl border-b border-white/10 py-4" : "py-6"
       }`}
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           <a
             href="#"
-            className="text-2xl font-bold gradient-text cursor-pointer"
+            className="text-2xl font-bold text-white cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             JD
@@ -50,7 +50,7 @@ export const Navigation = () => {
               <a
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground/80 hover:text-primary transition-colors cursor-pointer"
+                className="text-white/70 hover:text-white transition-colors cursor-pointer"
               >
                 {item.label}
               </a>
@@ -61,7 +61,7 @@ export const Navigation = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden text-white"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X /> : <Menu />}
@@ -70,12 +70,12 @@ export const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-4 glass rounded-2xl p-6 space-y-4">
+          <div className="md:hidden mt-4 bg-black/80 backdrop-blur-xl border border-white/10 rounded-lg p-6 space-y-4">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="block text-foreground/80 hover:text-primary transition-colors cursor-pointer py-2"
+                className="block text-white/70 hover:text-white transition-colors cursor-pointer py-2"
               >
                 {item.label}
               </a>

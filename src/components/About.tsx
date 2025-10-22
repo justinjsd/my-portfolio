@@ -42,12 +42,12 @@ export const About = () => {
   return (
     <section id="about" className="py-24 px-6 relative overflow-hidden">
       {/* Animated background */}
-      <div className="absolute top-0 left-1/2 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
-      
+      <div className="absolute top-0 left-1/2 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
+
       <div ref={sectionRef} className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center space-y-4 mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text">About Me</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-bold text-white tracking-tight">About Me</h2>
+          <p className="text-xl md:text-2xl text-white/70 max-w-2xl mx-auto font-light">
             Passionate about turning data into strategic business advantages
           </p>
         </div>
@@ -56,34 +56,46 @@ export const About = () => {
           {highlights.map((item, index) => (
             <div
               key={item.title}
-              className="glass p-8 rounded-2xl hover:scale-105 hover:shadow-[0_0_40px_rgba(14,165,233,0.2)] transition-all duration-300 scroll-reveal"
+              className="group relative card-matte border border-white/10 p-8 rounded-xl hover:scale-105 hover:border-white/20 transition-all duration-500 scroll-reveal spotlight overflow-hidden"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="bg-primary/20 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <item.icon className="w-8 h-8 text-primary" />
+              {/* Animated gradient background on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative z-10">
+                <div className="bg-white/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                  <item.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
+                <p className="text-white/70 leading-relaxed group-hover:text-white/90 transition-colors font-normal">{item.description}</p>
               </div>
-              <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="glass p-8 md:p-12 rounded-2xl space-y-6 scroll-reveal hover:shadow-[0_0_40px_rgba(14,165,233,0.2)] transition-all duration-300">
-          <h3 className="text-2xl font-semibold mb-4">Who Am I?</h3>
-          <div className="space-y-4 text-foreground/80 leading-relaxed">
-            <p>
-              I'm currently working at the region's largest luxury retail company{" "}
-              <span className="text-primary font-semibold">Chalhoub Group</span> as an Analytics
-              Engineer with a keen interest in driving business development and innovation.
-            </p>
-            <p>
-              I love delving deep into data and generating insights either by building on it or by
-              visualizing information to create actionable insights.
-            </p>
-            <p>
-              I have taken up various courses, certifications and built a portfolio of projects that
-              have led me to believe that I can really be of good value to any data-driven team.
-            </p>
+        <div className="group relative card-matte border border-white/10 p-8 md:p-12 rounded-xl space-y-6 scroll-reveal hover:border-white/20 transition-all duration-500 overflow-hidden">
+          {/* Animated gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+          <div className="relative z-10">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">Who Am I?</h3>
+            <div className="space-y-5 text-white/75 leading-relaxed group-hover:text-white/90 transition-colors duration-300 text-base md:text-lg">
+              <p>
+                I'm currently working at the region's largest luxury retail company{" "}
+                <span className="text-white font-semibold" style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.3)' }}>
+                  Chalhoub Group
+                </span> as an Analytics
+                Engineer with a keen interest in driving business development and innovation.
+              </p>
+              <p>
+                I love delving deep into data and generating insights either by building on it or by
+                visualizing information to create actionable insights.
+              </p>
+              <p>
+                I have taken up various courses, certifications and built a portfolio of projects that
+                have led me to believe that I can really be of good value to any data-driven team.
+              </p>
+            </div>
           </div>
         </div>
       </div>
