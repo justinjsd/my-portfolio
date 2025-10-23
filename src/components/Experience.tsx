@@ -24,7 +24,18 @@ export const Experience = () => {
   const experiences = [
     {
       period: "2025 - Present",
-      title: "Data Engineer",
+      title: "Cloud Data Engineer",
+      company: "TRKKN (Omnicom Media Group)",
+      achievements: [
+        "Working at a premier Google Cloud Partner specializing in cloud-native data solutions",
+        "Building and optimizing data pipelines on Google Cloud Platform to support enterprise-scale analytics",
+        "Designing scalable data architectures leveraging BigQuery, Cloud Storage, and Cloud Functions",
+        "Implementing data engineering best practices for ETL/ELT workflows and data transformation",
+      ],
+    },
+    {
+      period: "2025",
+      title: "Senior Analytics Engineer",
       company: "Chalhoub Group",
       achievements: [
         "Leveraged BigQuery on GCP to transform data and deliver analytics in Looker; built custom ingestion pipelines in Python, data transformations in dbt, orchestration in Apache Airflow",
@@ -37,7 +48,7 @@ export const Experience = () => {
     },
     {
       period: "2023 - 2024",
-      title: "Associate Analytics Engineer",
+      title: "Analytics Engineer",
       company: "Chalhoub Group",
       achievements: [
         "Built the Finance & Operations (FinOps) Analytics Layer for the Group on Looker leveraging a Google (GCP) powered stack",

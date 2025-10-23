@@ -24,18 +24,18 @@ export const About = () => {
   const highlights = [
     {
       icon: Database,
-      title: "Data Analytics",
-      description: "Expert in SQL, Looker, DBT, and Python for transforming raw data into insights",
+      title: "Data Engineering",
+      description: "Expert in building scalable data pipelines using SQL, Python, dbt, and Apache Airflow",
     },
     {
       icon: TrendingUp,
-      title: "Business Innovation",
-      description: "Driving data-driven decision making and automating complex analytical workflows",
+      title: "Cloud Architecture",
+      description: "Designing and implementing cloud-native solutions on Google Cloud Platform",
     },
     {
       icon: Zap,
-      title: "Performance Optimization",
-      description: "Reducing analysis time from days to seconds through intelligent automation",
+      title: "Pipeline Optimization",
+      description: "Building efficient ETL/ELT workflows that transform raw data into analytics-ready datasets",
     },
   ];
 
@@ -48,7 +48,7 @@ export const About = () => {
         <div className="text-center space-y-4 mb-16 scroll-reveal">
           <h2 className="text-5xl md:text-6xl font-bold text-white tracking-tight">About Me</h2>
           <p className="text-xl md:text-2xl text-white/70 max-w-2xl mx-auto font-light">
-            Passionate about turning data into strategic business advantages
+            Building robust data infrastructure that powers business insights
           </p>
         </div>
 
@@ -81,19 +81,16 @@ export const About = () => {
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">Who Am I?</h3>
             <div className="space-y-5 text-white/75 leading-relaxed group-hover:text-white/90 transition-colors duration-300 text-base md:text-lg">
               <p>
-                I'm currently working at the region's largest luxury retail company{" "}
+                I'm currently working at{" "}
                 <span className="text-white font-semibold" style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.3)' }}>
-                  Chalhoub Group
-                </span> as an Analytics
-                Engineer with a keen interest in driving business development and innovation.
+                  TRKKN
+                </span>, a premier Google Cloud Partner, as a Cloud Data Engineer with a passion for building scalable data infrastructure and driving business innovation.
               </p>
               <p>
-                I love delving deep into data and generating insights either by building on it or by
-                visualizing information to create actionable insights.
+                I specialize in designing and implementing robust data pipelines, transforming raw data into analytics-ready datasets, and building cloud-native solutions that empower data-driven decision making.
               </p>
               <p>
-                I have taken up various courses, certifications and built a portfolio of projects that
-                have led me to believe that I can really be of good value to any data-driven team.
+                With hands-on experience across the full data engineering lifecycle—from ingestion and transformation to orchestration and analytics—I bring technical expertise and a commitment to delivering high-quality, scalable data solutions.
               </p>
             </div>
           </div>

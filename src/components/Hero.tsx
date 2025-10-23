@@ -40,17 +40,17 @@ export const Hero = () => {
               <span className="gradient-text animate-glow-pulse">Justin David</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/70 font-light animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-              Analytics Engineer & Data Innovator
+              Data & Analytics Engineer 🚀
             </p>
           </div>
 
           <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-            Transforming data into actionable insights at{" "}
+            Building the Data space for various clients across the Middle East at{" "}
             <span className="text-white font-semibold relative inline-block">
-              Chalhoub Group
+              TRKKN MENA
               <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-white to-transparent"></span>
             </span>
-            . Passionate about driving business development through innovative analytics solutions.
+            . Passionate about driving business development through innovative data & analytics solutions.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
