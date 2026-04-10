@@ -38,10 +38,14 @@ export const Navigation = () => {
         <div className="flex items-center justify-between">
           <a
             href="#"
-            className="text-2xl font-bold text-white cursor-pointer"
+            className="cursor-pointer flex items-center"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            JD
+            <img 
+              src={`${import.meta.env.BASE_URL}webpage_logo.png`} 
+              alt="Justin David Logo" 
+              className="h-8 w-auto object-contain" 
+            />
           </a>
 
           {/* Desktop Navigation */}
